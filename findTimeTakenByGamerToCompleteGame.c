@@ -25,16 +25,16 @@ void main(){
     int T,X,Y,Z;
     int TOT[100];
     //Input no. of test-cases
-    scanf("\n%d",&T);
+    scanf("%d\n",&T);
     //Input X,Y,Z
     int T1=T;
     for(int i=0;i<T;i++)
     {
-        scanf("\n%d %d %d",&X,&Y,&Z);
+        scanf("%d %d %d",&X,&Y,&Z);
         TOT[i]=timeFunction(X,Y,Z);
     }
     for(int i=0;i<T1;i++)
     {
-        printf("\n%d",TOT[i]);
+        printf("%d \n",TOT[i]);
     }
 }
