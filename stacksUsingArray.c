@@ -100,7 +100,9 @@ unsigned peek(struct stack *x)
 {
     return (*x).top;
 }
-
+/*In the above function, last element of the list cannot be modified.
+To enable modification, try the below code in place of return (*x).top :
+return (*x).a[(*x).top] */
 
 void push(struct stack *x, struct student s)
 {
@@ -112,4 +114,12 @@ void pop(struct stack *x)
 {
     (*x).top--;
 }
-
+/*Above function 'kills' the popped element. In case the caller 
+function wants to use the popped variable, only the copy can be
+returned and return type of the function is struct student. 
+Use the following code instead of     (*x).top--: 
+struct student temp;
+temp=(*x).a[(*x).top];
+(*x).top--;
+return temp;
+*/
